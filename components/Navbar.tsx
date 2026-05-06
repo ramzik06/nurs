@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Camera, Languages, MessageCircle } from 'lucide-react';
+import { Languages } from 'lucide-react';
 import { contact } from '@/lib/site';
 import { useLanguage } from './LanguageContext';
 
@@ -16,50 +16,50 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-stone-200/70 bg-white/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="font-heading text-2xl font-medium text-stone-950">
+    <nav className="fixed top-0 z-50 w-full border-b border-stone-100 bg-white/90 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-6 lg:px-8">
+        <Link href="/" className="font-heading text-xl font-light tracking-[0.08em] text-stone-950">
           Nursultan
         </Link>
 
-        <div className="hidden items-center gap-9 md:flex">
+        <div className="hidden items-center gap-10 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-light text-stone-500 transition-colors duration-300 hover:text-stone-950"
+              className="text-[10px] font-light uppercase tracking-[0.18em] text-stone-400 transition-colors duration-300 hover:text-stone-950"
             >
               {item.label}
             </Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setLanguage(language === 'RU' ? 'KZ' : 'RU')}
-            className="mr-2 flex h-9 items-center gap-2 rounded-full border border-stone-200 bg-white px-3 text-xs font-medium text-stone-600 transition-all hover:bg-stone-50 hover:text-stone-950"
+            className="flex items-center gap-1.5 text-[10px] font-light uppercase tracking-[0.14em] text-stone-400 transition-colors hover:text-stone-950"
           >
-            <Languages className="size-3.5" />
+            <Languages className="size-3" />
             {language}
           </button>
-          
-          <a
-            href={contact.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="flex size-9 items-center justify-center rounded-full text-stone-500 transition-all duration-300 hover:bg-stone-100 hover:text-stone-950"
-          >
-            <Camera className="size-4" />
-          </a>
+
+          <div className="hidden h-3.5 w-px bg-stone-200 sm:block" />
+
           <a
             href={contact.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="WhatsApp"
-            className="flex size-9 items-center justify-center rounded-full text-stone-500 transition-all duration-300 hover:bg-stone-100 hover:text-stone-950"
+            className="hidden text-[10px] font-light uppercase tracking-[0.14em] text-stone-400 transition-colors hover:text-stone-950 sm:block"
           >
-            <MessageCircle className="size-4" />
+            WhatsApp
+          </a>
+          <a
+            href={contact.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden text-[10px] font-light uppercase tracking-[0.14em] text-stone-400 transition-colors hover:text-stone-950 sm:block"
+          >
+            Instagram
           </a>
         </div>
       </div>

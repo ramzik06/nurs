@@ -1,6 +1,5 @@
 'use client';
 
-import { Card, CardContent } from '@/components/ui/card';
 import { BookOpenText, Palette, Sparkles, Handshake } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 
@@ -8,61 +7,48 @@ export default function WhyChoose() {
   const { t } = useLanguage();
 
   const reasons = [
-    {
-      icon: Sparkles,
-      title: t.whyChoose.reason1Title,
-      description: t.whyChoose.reason1Desc,
-    },
-    {
-      icon: BookOpenText,
-      title: t.whyChoose.reason2Title,
-      description: t.whyChoose.reason2Desc,
-    },
-    {
-      icon: Palette,
-      title: t.whyChoose.reason3Title,
-      description: t.whyChoose.reason3Desc,
-    },
-    {
-      icon: Handshake,
-      title: t.whyChoose.reason4Title,
-      description: t.whyChoose.reason4Desc,
-    },
+    { icon: Sparkles, title: t.whyChoose.reason1Title, description: t.whyChoose.reason1Desc },
+    { icon: BookOpenText, title: t.whyChoose.reason2Title, description: t.whyChoose.reason2Desc },
+    { icon: Palette, title: t.whyChoose.reason3Title, description: t.whyChoose.reason3Desc },
+    { icon: Handshake, title: t.whyChoose.reason4Title, description: t.whyChoose.reason4Desc },
   ];
 
   return (
-    <section className="bg-[#f8f5ef] px-5 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div className="lg:sticky lg:top-28">
-          <p className="mb-4 text-xs font-light uppercase text-[#7f9a86]">{t.whyChoose.badge}</p>
-          <h2 className="font-heading text-5xl font-light leading-tight text-stone-950 md:text-6xl">
+    <section className="bg-[#f9f7f3] px-5 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1fr_1.3fr] lg:items-start lg:gap-28">
+        <div className="lg:sticky lg:top-32">
+          <p className="mb-5 text-[9px] font-light uppercase tracking-[0.2em] text-stone-400">
+            {t.whyChoose.badge}
+          </p>
+          <h2 className="font-heading text-[48px] font-light leading-tight tracking-[-0.01em] text-stone-950 md:text-[58px]">
             {t.whyChoose.title}
           </h2>
-          <p className="mt-6 max-w-md text-base font-light leading-7 text-stone-600">
+          <div className="mt-7 h-px w-10 bg-[#9a6a25]" />
+          <p className="mt-7 max-w-xs text-[15px] leading-8 text-stone-500">
             {t.whyChoose.description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div>
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
-              <Card
+              <div
                 key={index}
-                className="group rounded-md border-stone-200 bg-white/90 shadow-[0_18px_60px_rgba(120,113,108,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(120,113,108,0.13)]"
+                className="border-t border-stone-200 py-9 first:border-t-0 first:pt-0"
               >
-                <CardContent className="p-7">
-                  <div className="mb-8 flex size-12 items-center justify-center rounded-2xl border border-stone-200 bg-white text-stone-700 shadow-sm transition-all duration-300 group-hover:border-stone-300 group-hover:bg-[#f4efe6]">
-                    <Icon className="size-5 text-[#b8893b] transition-colors duration-300 group-hover:text-[#7f9a86]" />
+                <div className="flex items-start gap-5">
+                  <Icon className="mt-1 size-4 shrink-0 text-[#9a6a25]" />
+                  <div>
+                    <h3 className="font-heading text-[26px] font-light leading-tight tracking-[-0.01em] text-stone-950">
+                      {reason.title}
+                    </h3>
+                    <p className="mt-3 text-[15px] leading-[1.85] text-stone-600">
+                      {reason.description}
+                    </p>
                   </div>
-                  <h3 className="font-heading text-3xl font-light text-stone-950">
-                    {reason.title}
-                  </h3>
-                  <p className="mt-4 text-sm font-light leading-7 text-stone-600">
-                    {reason.description}
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             );
           })}
         </div>
