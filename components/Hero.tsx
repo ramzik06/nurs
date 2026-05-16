@@ -52,27 +52,7 @@ export default function Hero() {
             />
           </div>
 
-          {/* Bottom-left card */}
-          <div
-            className="absolute bottom-4 left-4 z-10 block w-32 bg-white p-2.5 shadow-[0_20px_60px_rgba(0,0,0,0.14)] reveal-up sm:w-52 sm:p-3.5"
-            style={{ animationDelay: card1Delay }}
-          >
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src={media.heroDetail}
-                alt="Event host portrait detail"
-                fill
-                sizes="208px"
-                className="object-cover object-[60%_25%]"
-              />
-            </div>
-            <div className="mt-3 flex items-center gap-2">
-              <CalendarDays className="size-3 text-[#9a6a25]" />
-              <span className="text-[9px] font-light uppercase tracking-[0.15em] text-stone-400">
-                {t.hero.detailNote}
-              </span>
-            </div>
-          </div>
+          {/* Bottom-left card removed */}
 
           {/* Top-right: pulsing equalizer — no text, no music label */}
           <div

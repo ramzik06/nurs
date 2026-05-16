@@ -9,11 +9,9 @@ export default function MediaShowcase() {
   const { t } = useLanguage();
 
   const photos = [
-    { label: t.media.photoLabel1, image: media.hero, position: 'object-[58%_25%]' },
     { label: t.media.photoLabel2, image: media.portrait, position: 'object-[62%_35%]' },
     { label: t.media.photoLabel3, image: media.editorial, position: 'object-[35%_65%]' },
     { label: t.media.photoLabel4, image: media.galleryOne, position: 'object-[50%_15%]' },
-    { label: t.media.photoLabel5, image: media.galleryTwo, position: 'object-[50%_30%]' },
     { label: t.media.photoLabel6, image: media.galleryThree, position: 'object-[50%_20%]' },
     { label: t.media.photoLabel7, image: media.galleryFour, position: 'object-[50%_40%]' },
     { label: t.media.photoLabel8, image: media.heroDetail, position: 'object-[50%_25%]' },
